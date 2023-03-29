@@ -1,0 +1,128 @@
+:root {
+    --light-0: rgb(250, 250, 250);
+    --dark-0: rgb(50, 50, 50);
+    --light-1: rgb(225, 225, 255);
+    --dark-1: rgb(75, 75, 75);
+    --light-2: rgb(200, 200, 200);
+    --dark-2: rgb(100, 100, 100);
+    --light-3: rgb(175, 175, 175);
+    --dark-3: rgb(125, 125, 125);
+    --light-4: rgb(150, 150, 150);
+    --dark-4: rgb(150, 150, 150);
+    --light-alpha-1: rgba(250, 250, 250, 0.25);
+    --dark-alpha-1: rgba(50, 50, 50, 0.25);
+    --light-alpha-2: rgba(250, 250, 250, 0.5);
+    --dark-alpha-2: rgba(50, 50, 50, 0.5);
+    --light-alpha-3: rgba(250, 250, 250, 0.75);
+    --dark-alpha-3: rgba(50, 50, 50, 0.75);
+    --orange: rgb(250, 150, 0);
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Mgen+ 2cp";
+}
+img {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+@media (prefers-color-scheme: light) {
+    body {
+        color: var(--dark-0);
+        background: var(--light-0);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--light-0);
+        background: var(--dark-0);
+    }
+    ::-webkit-scrollbar {
+        overflow-y: scroll;
+        width: 1rem;
+        height: 1rem;
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--dark-2);
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        border: 0.25rem solid var(--dark-2);
+        background: var(--light-alpha-2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--light-alpha-3);
+    }
+    ::-webkit-scrollbar-thumb:active {
+        background: var(--light-0);
+    }
+    .Main-Menu {
+        position: fixed;
+        width: 100%;
+        height: 3rem;
+        background: var(--dark-1);
+    }
+    .Menu {
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 2rem;
+        height: 2rem;
+    }
+    .Menu-check {
+        position: fixed;
+        top: 0.25rem;
+        left: 0.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        transition: background 0.25s;
+    }
+    .Menu-check:hover {
+        background: var(--light-alpha-1);
+    }
+    .Menu-check:active {
+        background: var(--light-alpha-2);
+    }
+    #Menu-checkbox {
+        display: none;
+    }
+    #Menu-checkbox:checked ~ .Menu-check {
+        outline: 0.1rem solid var(--light-0);
+    }
+    #Menu-checkbox:checked ~ .Menu-check:hover {
+        background: var(--light-alpha-1);
+    }
+    #Menu-checkbox:checked ~ .Menu-check:active {
+        background: var(--light-alpha-2);
+    }
+    .Side-Menu {
+        position: fixed;
+        width: 16rem;
+        height: 100%;
+        top: 3rem;
+        left: -16rem;
+        background: var(--dark-1);
+        transition: 0.25s;
+        overflow-y: scroll;
+    }
+    #Menu-checkbox:checked ~ .Side-Menu {
+        left: 0rem;
+    }
+    .OriginX {
+        position: fixed;
+        top: 0.5rem;
+        left: 3rem;
+        width: 8rem;
+        height: 2rem;
+        object-fit: cover;
+    }
+    .Main-Menu-empty {
+        width: 100%;
+        height: 3rem;
+    }
+}
